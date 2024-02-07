@@ -155,7 +155,7 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-ALLOWED_HOSTS = ['0.0.0.0','localhost','172.16.132.179' ]
+ALLOWED_HOSTS = ['0.0.0.0','localhost','172.16.132.179','.vercel.app','.now.sh']
 
 
 
@@ -190,3 +190,7 @@ TWILIO_AUTH_TOKEN = os.getenv('auth_token')
 TWILIO_VERIFY_SERVICE_SID = os.getenv('verify_sid') 
 TWILIO_PHONE_NUMBER=os.getenv('Twilio_phone_number')
 
+ 
+
+STATICFILES_DIRS=os.path.join[BASE_DIR,'static']
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
