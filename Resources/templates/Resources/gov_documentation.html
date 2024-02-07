@@ -1,0 +1,339 @@
+{% extends "ShikshaSaarthi/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+  .page-heading {
+    font-size: 60px;
+    text-decoration: underline 3px;
+  }
+  .page-description {
+    font-size: 25px;
+  }
+    .filterDiv {
+      float: left;
+      background-color: #666666;
+      color: #ffffff;
+      width: 140px;
+      height: 100px;
+      line-height: 30px;
+      text-align: center;
+      margin: 3px;
+      display: none;
+    }
+    
+    .show {
+      display: block;
+    }
+    
+    .container {
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: #ddd;
+    }
+    
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+    .text-about{
+      width: 90%;
+    }
+    </style>
+    <body>
+<div class="wrap" style="margin: 45px; padding: inherit; font-size: large; color: black;" >
+      <h1 class="page-heading"><b>Government Policies</b></h1>
+      <p class="page-description">The Indian government offers various scholarships and policies to support its citizens in pursuing education and promoting social and economic development. Here's a brief overview of some key government initiatives:</p>
+      <br><br>
+      <div id="myBtnContainer">
+          <button class="btn active" data-filter="all"> Show all</button>
+          <button class="btn" data-filter="education"> Educational Policies</button>
+          <button class="btn" data-filter="job"> Jobs</button>
+          <button class="btn" data-filter="scholarship"> Educational Scholarships</button>
+          <!-- <button class="btn" data-filter=""> Colors</button> -->
+      </div>
+      
+      <div class="container">
+          <button class="filterDiv education" data-related="nep" onclick="showtext('nep')">National Education Policy, 2020</button>
+          <button class="filterDiv scholarship" data-related="disabilities" onclick="showtext('disabilities')">Scholarships for students with disabilities</button>
+          <button class="filterDiv education" data-related="initiatives" onclick="showtext('initiatives')">Government Initiatives for Students</button>
+          <button class="filterDiv education" data-related="girl-policies" onclick="showtext('girl-policies')">Government Initiatives for Girls</button>
+          <button class="filterDiv job" data-related="work-env" onclick="showtext('work-env')">Safety, Health and Environment at Work Place</button>
+          <button class="filterDiv job" data-related="mgnrega" onclick="showtext('mgnrega')" style="line-height: 20px ">Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)</button>
+          <button class="filterDiv scholarship" data-related="minorities" onclick="showtext('minorities')">Scholarships for Minorities</button>
+          <button class="filterDiv scholarship " data-related="labour" onclick="showtext('labour')">Scholarships for Labour Workers</button>
+          <button class="filterDiv scholarship" data-related="backward" onclick="showtext('backward')">Scholarships for Backward Classes</button>
+          <button class="filterDiv scholarship" data-related="higher" onclick="showtext('higher')">Scholarships for Higher Education</button>
+          <button class="filterDiv job" data-related="pmkvy" onclick="showtext('pmkvy')">Pradhan Mantri Kaushal Vikas Yojana (PMKVY)</button>
+      </div>
+      
+      <div class="text-about">
+
+        <!-- National Education Policy, 2020 -->
+          <div class="related-div nep">The National Education Policy 2020 is like a set of new rules and ideas for how students learn in India. Here are some simple points: <br>
+            
+            1. Kids from the age of 3 to 6 will start learning early to help them grow smarter and happier.
+            <br>
+            2. In school, students will have a different way of learning. It will be more about understanding things and not just memorizing facts.
+            <br>
+            3. There will be fewer big exams that stress students out. Instead, there will be different ways to see how well they are doing.
+            <br>
+            4. Teachers will get better training, so they can teach students well.
+            <br>
+            5. We will use computers and the internet more to help students learn, especially in places far away.
+            <br>
+            6. Students will learn in their own language and also learn other languages.
+            <br>
+            7. There will be new rules to make sure everyone, no matter how rich or poor, gets a good education.
+            <br>
+            8. We will encourage students to be more creative and think for themselves.
+            <br>
+            9. More money will be spent on research and new ideas in education.
+            <br>
+            The goal is to make education in India better and more suited to the needs of students today.</div>
+
+            <!-- Scholarships for Students with Disabilities  -->
+          <div class="related-div disabilities">
+            The Indian government provides scholarships for children with disabilities through various schemes, which can be accessed through the National Scholarship Portal <a href="https://scholarships.gov.in/" target="_blank" style="color: #0669d7;">(https://scholarships.gov.in/)</a>. These scholarships aim to support and empower children with disabilities in their educational pursuits. Some key features include:
+            <br>
+            1. Pre-Matric Scholarships: This scheme offers financial assistance to disabled students in classes 9 and 10 for covering various expenses, including tuition fees, textbooks, and disability-related aids.
+            <br>
+            2. Post-Matric Scholarships: These scholarships are available for disabled students pursuing higher education (11th and 12th grades and beyond) and cover a range of educational costs.
+            <br>
+            3. Scholarships for Students with Disabilities: Several scholarships are provided based on disability type, such as visual impairment, hearing impairment, locomotor disability, etc. These scholarships address the specific needs of students with different disabilities.
+            <br>
+            4. Scholarships for Research: Some scholarships are available for disabled students pursuing research or specialized studies in fields like science and technology.
+            <br>
+            5. Guidelines and Eligibility: The National Scholarship Portal provides detailed guidelines and eligibility criteria for each scholarship, including the required documents and application procedures.
+            <br>
+            6. Online Application: Applicants can apply for these scholarships online through the National Scholarship Portal, making it easier to access and track the status of their applications.
+            <br>
+            These scholarships are part of the Indian government's commitment to promoting inclusive education and ensuring that children with disabilities have equal opportunities to access quality education. The National Scholarship Portal <a href="https://scholarships.gov.in/" target="_blank" style="color: #0669d7 ;">(https://scholarships.gov.in/)</a> serves as a centralized platform for applying to and managing various government scholarships, including those designed for students with disabilities.
+          </div>
+
+          <!-- Government Initiatives for Students -->
+          <div class="related-div initiatives">
+            Government has Initiated many Eduactional Policies for students like :
+            <br>
+            1. STARS Project: The STARS (Strengthening Teaching-Learning and Results for States) project focuses on improving the quality and governance of school education in India by providing financial support to states.
+            <br>
+            2. Kala Utsav: Kala Utsav is an annual arts festival for students, promoting creativity and celebrating India's cultural diversity by showcasing students' artistic talents.
+            <br>
+            3. Swachh Vidyalaya Abhiyan: This initiative is part of the Swachh Bharat Abhiyan and aims to improve sanitation and hygiene facilities in schools across the country.
+            <br>
+            4. Shiksha Parv Initiative: Shiksha Parv is an annual event in India that celebrates the importance of education, involving various activities and programs to highlight the value of learning.
+            <br>
+            5. National Means cum Merit Scholarship (NMMS): NMMS is a scholarship program for economically disadvantaged students in India who show academic merit, providing financial assistance for their education.
+            <br>
+            6. National Talent Search Exam (NTSE): The NTSE is a prestigious scholarship examination for students in India. It identifies and supports talented students by providing financial assistance for their education.
+            <br>
+            7. ISHAN UDAY: ISHAN UDAY is a scholarship scheme for students from the northeastern region of India pursuing higher education, with the aim of providing financial support and promoting education in the northeastern states.
+            <br>
+            8. Ishan Vikas: Ishan Vikas is another scholarship scheme for students from the northeastern region, offering financial assistance for technical and professional courses to encourage higher education in the region.
+          </div>
+          <div class="related-div red">Red color details</div>
+
+          <!-- Government Initiatives for Girls -->
+          <div class="related-div girl-policies">
+            The Indian government has initiated several programs and schemes to promote and support girls' education in the country. These initiatives are aimed at addressing gender disparities in education and ensuring that girls have equal access to quality education. Here are some key details about these initiatives:
+              <br>
+              1. <b>Beti Bachao, Beti Padhao (BBBP):</b> Launched in 2015, this program seeks to address the declining child sex ratio and promote the education of girls. It includes awareness campaigns, scholarship schemes, and support for the girl child's education.
+              <br>
+              2. <b>Sarva Shiksha Abhiyan (SSA):</b> SSA is a flagship program that aims to provide elementary education to all children, with a special focus on girls and children from disadvantaged groups. It includes provisions for gender-sensitive infrastructure and teacher training.
+              <br>
+              3. <b>Kasturba Gandhi Balika Vidyalaya (KGBV):</b> KGBV schools are residential schools for girls from disadvantaged backgrounds, providing them with quality education, life skills, and vocational training.
+              <br>
+              4. <b>Girl Education Schemes:</b> Various states in India have implemented schemes like the Ladli Scheme in Delhi and the Apni Beti Apna Dhan Scheme in Haryana, which offer financial incentives and support for girls' education.
+              <br>
+              5. <b>Sukanya Samriddhi Yojana:</b> This is a savings scheme that encourages parents to save for the future education and marriage expenses of their girl child. It offers tax benefits and competitive interest rates.
+              <br>
+              6. <b>Udaan:</b> The Udaan program is aimed at providing girl students from Jammu and Kashmir with special coaching and support to prepare for engineering entrance exams, promoting their participation in technical education.
+              <br>
+              7. <b>Scholarship Schemes:</b> The government provides various scholarships for girl students, such as the National Means cum Merit Scholarship (NMMS) and the Indira Gandhi Scholarship for Single Girl Child, to facilitate their access to education.
+              <br>
+              8. <b>Infrastructure Development:</b> Efforts are made to improve school infrastructure, including the construction of girls' toilets, to create a safe and conducive learning environment.
+              <br>
+              These government initiatives underscore the commitment to girls' education and gender equality in India, seeking to remove barriers and promote educational opportunities for girls, especially those from marginalized communities.
+          </div>
+          <div class="related-div blue">Blue color specifics</div>
+
+          <!-- Safety, Health and Environment at Work Place -->
+          <div class="related-div work-env">The Constitution of India provide detailed provisions for the rights of the citizens and also lays down the Directive Principles of State Policy which set an aim to which the activities of the state are to be guided. On the basis of these Directive Principles as well as international instruments, Government is committed to regulate all economic activities for management of safety and health risks at workplaces and to provide measures so as to ensure safe and healthy working conditions for every working man and woman in the nation. Government recognizes that safety and health of workers has a positive impact on productivity and economic and social development. Prevention is an integral part of economic activities as high safety and health standard at work is as important as good business performance for new as well as existing industries.
+            <br><br>
+            Read More about Safety, Health and Environment at Work Place ...<a href="https://labour.gov.in/sites/default/files/SafetyHealthandEnvironmentatWorkPlace.pdf" target="_BLANK" title="Download (132.19 KB)" onclick="return confirm('You are being redirected to an new tab.')" role="link" class="text-400" style="color: #0669d7;">Download (132.19 KB) 
+            </a>
+          </div>
+
+          <!-- Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA) -->
+          <div class="related-div mgnrega">The Mahatma Gandhi National Rural Employment Guarantee Act (MNREGA) is a vital Indian social welfare program enacted in 2005. Its core objective is to provide rural households with a right to work, guaranteeing at least 100 days of wage employment per financial year. MNREGA primarily focuses on unskilled labor, offering employment in public works projects like road construction and water conservation.
+            <br>
+            The program places a strong emphasis on women's participation, ensuring that at least one-third of beneficiaries are women. Funding is shared between the central and state governments, with the central government covering wage payments and the state government handling other expenses. MNREGA promotes transparency and accountability through social audits.
+            <br>
+            Households in rural areas register for MNREGA work at local Gram Panchayats, and eligible households receive job cards that serve as an entitlement to demand work. To enhance efficiency and reduce leakages, the program has adopted the Electronic Fund Management System (e-FMS) for direct wage payments.
+            <br>
+            MNREGA has made a significant impact on rural employment, poverty reduction, and social development, serving as a vital safety net for vulnerable households. Nonetheless, challenges such as delayed wage payments and issues related to the quality of assets created remain areas for improvement.</div>
+          
+
+          <div class="related-div minorities">Scholarships for Minorities</div>
+          <div class="related-div labour">Scholarships for Labour Workers</div>
+          <div class="related-div backward">Scholarships for Backward Classes</div>
+          <div class="related-div higher">Scholarships for Higher Education</div>
+
+          <!-- Pradhan Mantri Kaushal Vikas Yojana (PMKVY) -->
+          <div class="related-div pmkvy">
+            The Pradhan Mantri Kaushal Vikas Yojana (PMKVY) is a flagship scheme of the Government of India aimed at promoting skill development and vocational training among Indian youth. Launched in 2015, PMKVY focuses on providing industry-relevant skills to enhance the employability of youth across the country.
+            <br>
+            Key features and components of PMKVY include:
+            <br>
+            1. <b>Skill Training</b>: PMKVY offers skill training programs that are aligned with industry needs and standards. Training is provided across a wide range of sectors, including manufacturing, services, agriculture, and allied sectors.
+            <br>
+            2. <b>Recognition of Prior Learning (RPL)</b>: The scheme recognizes and certifies skills acquired informally, enabling individuals to receive recognition for their existing skills.
+            <br>          
+            3. <b>Short-Term Training</b>: PMKVY offers short-term training programs, typically spanning 150-300 hours, allowing participants to quickly acquire employable skills.
+            <br>
+            4. <b>Special Projects</b>: Special projects are designed to address the specific skill requirements of particular industries and sectors. These projects are implemented in collaboration with industry partners.
+            <br>
+            5. <b>Kaushal and Rozgar Mela</b>: Job fairs and placement drives, known as Kaushal and Rozgar Melas, are organized to connect trained candidates with potential employers.
+            <br>
+            6. <b>Financial Incentives</b>: Successful candidates receive financial incentives upon completion of their training. These incentives help cover the cost of training and other related expenses.
+            <br>
+            7. <b>Quality Assurance</b>: Quality is a significant focus, with monitoring and assessment of training centers to ensure that the training provided is of high quality and meets industry standards.
+            <br>
+            8. <b>Mobile App</b>: PMKVY has a mobile app that provides information about the scheme, training centers, and available courses. It also allows candidates to apply for training programs.
+            <br>
+            9. <b>Placement Support</b>: PMKVY aims to increase the employability of trained individuals by providing placement support and industry linkages.
+            <br>
+            10. <b>Targeted Beneficiaries</b>: While PMKVY is open to all, it particularly targets candidates who are school/college dropouts, economically disadvantaged, or from marginalized communities.
+            <br>
+            PMKVY plays a crucial role in addressing India's skill gap by providing a structured framework for skill development and job placement. It aligns with the government's broader initiatives like Make in India and Digital India, promoting economic growth and self-employment.
+            <br>
+            The scheme is implemented by the Ministry of Skill Development and Entrepreneurship and is continuously evolving to meet the changing demands of the job market. It has played a significant role in enhancing the employability of the Indian workforce, fostering entrepreneurship, and supporting the country's vision of a skilled and self-reliant workforce. 
+          </div>
+      </div>
+    </div>
+      
+      <script>
+        let isAllVisible = true; // Variable to track the visibility of all buttons
+
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") {
+      if (isAllVisible) {
+          hideAllButtons(); // Hide all buttons if they are currently visible
+          isAllVisible = false; // Set the state to hidden
+      } else {
+          showAllButtons(); // Show all buttons if they are currently hidden
+          isAllVisible = true; // Set the state to visible
+      }
+  } else {
+      hideAllButtons(); // Hide all buttons
+      showFilteredButtons(c); // Show the filtered buttons
+  }
+  hideAllRelatedText(); // Hide all related text elements
+}
+
+function hideAllButtons() {
+  var buttons = document.querySelectorAll('.container .filterDiv');
+  buttons.forEach(function (button) {
+      button.style.display = 'none';
+  });
+}
+
+function showAllButtons() {
+  var buttons = document.querySelectorAll('.container .filterDiv');
+  buttons.forEach(function (button) {
+      button.style.display = 'block';
+  });
+}
+
+function showFilteredButtons(c) {
+  var buttons = document.querySelectorAll('.container .filterDiv.' + c);
+  buttons.forEach(function (button) {
+      button.style.display = 'block';
+  });
+}
+
+
+        function hideAllRelatedText() {
+      var relatedDivs = document.querySelectorAll('.related-div');
+      relatedDivs.forEach(function (div) {
+          div.style.display = 'none';
+      });
+  }
+    
+        function AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+          }
+        }
+    
+        function RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+    
+        function showAll() {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            for (i = 0; i < x.length; i++) {
+                x[i].classList.add("show");
+            }
+        }
+    
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+                var filter = this.getAttribute("data-filter");
+                filterSelection(filter);
+            });
+        }
+    
+        // Hide the text-about div at the start
+        var textAbout = document.querySelector('.text-about');
+        var relatedDivs = textAbout.querySelectorAll('.related-div');
+        relatedDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+    
+        // Function to display the related div when a button is selected
+        function showtext(btnClass) {
+          hideAllRelatedText();
+            var relatedDiv = textAbout.querySelector('.related-div.' + btnClass);
+            relatedDiv.style.display = 'block';
+        }
+       
+    </script>       
+      
+      </body>
+
+
+
+{% endblock %}
