@@ -155,7 +155,7 @@ STATIC_URL = "/static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-ALLOWED_HOSTS = ['0.0.0.0','localhost','172.16.132.179','.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['0.0.0.0','localhost','172.16.132.179','.vercel.app','.now.sh','127.0.0.1']
 
 
 
