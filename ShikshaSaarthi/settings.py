@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -17,7 +17,7 @@ from pathlib import Path
 load_dotenv()
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+BASE_DIR = Path(__file__).resolve().parent.parent 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-2xtx)3qge^qbriami15zghcv_7)f4&!oa3rig9mpiuws7t&40w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -98,14 +98,18 @@ WSGI_APPLICATION = 'ShikshaSaarthi.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'SS2',
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'railway',
         'USER':'postgres',
-        'PASSWORD':'Gauri123@',
-        'PORT':'5432',
-        'HOST':'localhost'
+        'PASSWORD':'C*Ed5E2bC4-fBgEA64G1da-Fe2A35ac5',
+        'PORT':'19224',
+        'HOST':'viaduct.proxy.rlwy.net'
     }
 }
+
+
+# DATABASES["default"]=dj_database_url.parse("postgres://shikshasaarthi_user:7hNt0fbh9t2JWDLLC1dzMlQ6O1FcCrTw@dpg-cn2cop7109ks7395e0r0-a.oregon-postgres.render.com/shikshasaarthi")
+
 
 
 # Password validation
@@ -131,8 +135,10 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
+# STATICFILES_DIRS= os.path.join(BASE_DIR,'ShikshaSaarthi/static')
+STATIC_ROOT= os.path.join(BASE_DIR,'staticfiles_build','static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
@@ -161,7 +167,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
