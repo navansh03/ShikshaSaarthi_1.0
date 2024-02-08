@@ -356,150 +356,34 @@
         </div>
     </nav>
 
-
+    {% for n in courses %}
     <!-- Card -->
-    <div class="card_container">
-        <div class="card card1">
-            <div class="image"></div>
-            <div class="content">
-            <a href="#">
-                <span class="title">
-                Class 10
-                </span>
-            </a>
-        
-            <p class="desc">                
-              Class 10th is typically the second-to-last year of secondary education in many educational systems worldwide. Students in this class, undergo important examinations and coursework, laying the foundation for their future academic and career paths.
-            </p>
-        
-            <a class="action" href="Education_Subject.html">
-                Find out more
-                <span aria-hidden="true">
-                →
-                </span>
-            </a>
+        <div class="card_container">
+            <div class="card card1">
+                <div class="image"></div>
+                <div class="content">
+                <a href="#">
+                    <span class="title">
+                    {{n.name}}
+                    </span>
+                </a>
+            
+                <p class="desc">                
+                {{n.description}}
+                </p>
+            
+                <a class="action" href="Education_Subject.html">
+                    Find out more
+                    <span aria-hidden="true">
+                    →
+                    </span>
+                </a>
+                </div>
             </div>
+
+
         </div>
-
-        <div class="card card2">
-            <div class="image"></div>
-            <div class="content">
-            <a href="#">
-                <span class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </span>
-            </a>
-        
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                dolores, possimus pariatur animi temporibus nesciunt praesentium 
-            </p>
-        
-            <a class="action" href="#">
-                Find out more
-                <span aria-hidden="true">
-                →
-                </span>
-            </a>
-            </div>
-        </div>
-
-        <div class="card card3">
-            <div class="image"></div>
-            <div class="content">
-            <a href="#">
-                <span class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </span>
-            </a>
-        
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                dolores, possimus pariatur animi temporibus nesciunt praesentium 
-            </p>
-        
-            <a class="action" href="#">
-                Find out more
-                <span aria-hidden="true">
-                →
-                </span>
-            </a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="card_container">
-        <div class="card card1">
-            <div class="image"></div>
-            <div class="content">
-            <a href="#">
-                <span class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </span>
-            </a>
-        
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                dolores, possimus pariatur animi temporibus nesciunt praesentium 
-            </p>
-        
-            <a class="action" href="#">
-                Find out more
-                <span aria-hidden="true">
-                →
-                </span>
-            </a>
-            </div>
-        </div>
-
-        <div class="card card2">
-            <div class="image"></div>
-            <div class="content">
-            <a href="#">
-                <span class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </span>
-            </a>
-        
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                dolores, possimus pariatur animi temporibus nesciunt praesentium 
-            </p>
-        
-            <a class="action" href="#">
-                Find out more
-                <span aria-hidden="true">
-                →
-                </span>
-            </a>
-            </div>
-        </div>
-
-        <div class="card card3">
-            <div class="image"></div>
-            <div class="content">
-            <a href="#">
-                <span class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </span>
-            </a>
-        
-            <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-                dolores, possimus pariatur animi temporibus nesciunt praesentium 
-            </p>
-        
-            <a class="action" href="#">
-                Find out more
-                <span aria-hidden="true">
-                →
-                </span>
-            </a>
-            </div>
-        </div>
-
-    </div>
+    {% endfor %}
 
 
 

@@ -18,12 +18,6 @@ class CourseProperty(models.Model):
     class Meta:
         abstract = True
 
-class Prerequisites(CourseProperty):
-    pass
-
-class Learning(CourseProperty):
-    pass
-
 class Subject(models.Model):
     course=models.ForeignKey(Course,on_delete=models.CASCADE)
     name=models.CharField(max_length=100,null=False)

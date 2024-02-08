@@ -1,20 +1,20 @@
 from django.shortcuts import render
-from .models import Course,Learning,Subject,Video,UserCourse,Contact
+from .models import Course,Subject,Video,UserCourse,Contact
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
 
 # Create your views here.
 @login_required
-def educational_content(request):
-    courses=Course.objects.filter(active='True')    
+def educational_content(request,slug):
+    courses=Course.objects.filter(active='True') 
+       
     return render(request,template_name="Resources/educational.html",context={"courses":courses})
 
 
 def CourseOverview(request,slug):
     # print(slug)
     course=Course.objects.get(slug=slug)
-    learnings=Learning.objects.filter(course=course)
     subject=Subject.objects.filter(course=course)
     video=Video.objects.filter(course=course)
     course_id=Course.objects.get(slug=slug)
@@ -39,7 +39,6 @@ def CourseOverview(request,slug):
     context={
         "course":course,
         "video":video,
-        "learnings":learnings,
         "subjects":subject,
         'check_enroll':check_enroll,
         "button_text":button_text,
