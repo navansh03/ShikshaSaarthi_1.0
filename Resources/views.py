@@ -8,7 +8,7 @@ from django.urls import reverse
 @login_required
 def educational_content(request):
     courses=Course.objects.filter(active='True')    
-    return render(request,template_name="Resources/educational_content.html",context={"courses":courses})
+    return render(request,template_name="Resources/educational.html",context={"courses":courses})
 
 
 def CourseOverview(request,slug):

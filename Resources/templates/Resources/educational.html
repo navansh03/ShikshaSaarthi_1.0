@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body{
+        /* background-image: url("https://images.squarespace-cdn.com/content/v1/5421b6e2e4b0a6db313b8b24/1613932175243-LWAQF519CTRPKQN4XJVC/image-from-rawpixel-id-2620215-jpeg.jpg"); */
+        background-image: url({% static 'images/bg_education.jpg'  %});
+        background-color: #000117;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+      }
+      
+      .navbar-nav{
+        font-size: larger;
+        font-weight: 500;
+      }
+
+      .navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+        color: black;
+      }
+
+      .container-fluid {
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+        position: relative;
+        z-index: 1;
+        background: inherit;
+        /* overflow: hidden; */
+      }
+
+      .container-fluid:before {
+        content: "";
+        position: absolute;
+        background: inherit;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        /* box-shadow: inset 0 0 2000px rgba(150, 150, 150, 0.5); */
+        filter: blur(10px);
+        /* margin: -20px; */
+      }
+
+      .pic{
+        height: 90%;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .img {
+        /* width: 60%; */
+        height: 90%;
+        display: flex;
+      }
+
+      .box{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        margin: auto;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+    
+    .card_container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .card {
+    max-width: 300px;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid transparent;
+    margin-top: 100px;
+    }
+
+    .card a {
+    text-decoration: none
+    }
+
+    .content {
+    padding: 1.1rem;
+    }
+
+    .image {
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(239, 205, 255);
+    }
+
+    .title {
+    color: #111827;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    }
+
+    .desc {
+    margin-top: 0.5rem;
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    }
+
+    .action {
+    display: inline-flex;
+    margin-top: 1rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: #2563EB;
+    padding: 4px 8px;
+    border-radius: 4px;
+    }
+
+    .action span {
+    transition: .3s ease;
+    }
+
+    .action:hover span {
+    transform: translateX(4px);
+    }
+
+
+
+
+
+
+
+
+      .site-footer
+    {
+      background-color:#26272b;
+      padding:45px 0 20px;
+      margin-top: 100px;
+      font-size:15px;
+      line-height:24px;
+      color:#737373;
+    }
+    .site-footer hr
+    {
+      border-top-color:#bbb;
+      opacity:0.5
+    }
+    .site-footer hr.small
+    {
+      margin:20px 0
+    }
+    .site-footer h6
+    {
+      color:#fff;
+      font-size:16px;
+      text-transform:uppercase;
+      margin-top:5px;
+      letter-spacing:2px
+    }
+    .site-footer a
+    {
+      color:#737373;
+    }
+    .site-footer a:hover
+    {
+      color:#3366cc;
+      text-decoration:none;
+    }
+    .footer-links
+    {
+      padding-left:0;
+      list-style:none
+    }
+    .footer-links li
+    {
+      display:block
+    }
+    .footer-links a
+    {
+      color:#737373
+    }
+    .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+    {
+      color:#3366cc;
+      text-decoration:none;
+    }
+    .footer-links.inline li
+    {
+      display:inline-block
+    }
+    .site-footer .social-icons
+    {
+      text-align:right
+    }
+    .site-footer .social-icons a
+    {
+      width:40px;
+      height:40px;
+      line-height:40px;
+      margin-left:6px;
+      margin-right:0;
+      border-radius:100%;
+      background-color:#33353d
+    }
+    .copyright-text
+    {
+      margin:0
+    }
+    @media (max-width:991px)
+    {
+      .site-footer [class^=col-]
+      {
+        margin-bottom:30px
+      }
+    }
+    @media (max-width:767px)
+    {
+      .site-footer
+      {
+        padding-bottom:0
+      }
+      .site-footer .copyright-text,.site-footer .social-icons
+      {
+        text-align:center
+      }
+    }
+    .social-icons
+    {
+      padding-left:0;
+      margin-bottom:0;
+      list-style:none
+    }
+    .social-icons li
+    {
+      display:inline-block;
+      margin-bottom:4px
+    }
+    .social-icons li.title
+    {
+      margin-right:15px;
+      text-transform:uppercase;
+      color:#96a2b2;
+      font-weight:700;
+      font-size:13px
+    }
+    .social-icons a{
+      background-color:#eceeef;
+      color:#818a91;
+      font-size:16px;
+      display:inline-block;
+      line-height:44px;
+      width:44px;
+      height:44px;
+      text-align:center;
+      margin-right:8px;
+      border-radius:100%;
+      -webkit-transition:all .2s linear;
+      -o-transition:all .2s linear;
+      transition:all .2s linear
+    }
+    .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+    {
+      color:#fff;
+      background-color:#29aafe
+    }
+    .social-icons.size-sm a
+    {
+      line-height:34px;
+      height:34px;
+      width:34px;
+      font-size:14px
+    }
+    .social-icons a.facebook:hover
+    {
+      background-color:#3b5998
+    }
+    .social-icons a.twitter:hover
+    {
+      background-color:#00aced
+    }
+    .social-icons a.linkedin:hover
+    {
+      background-color:#007bb6
+    }
+    .social-icons a.dribbble:hover
+    {
+      background-color:#ea4c89
+    }
+    @media (max-width:767px)
+    {
+      .social-icons li.title
+      {
+        display:block;
+        margin-right:0;
+        font-weight:600
+      }
+    }
+        
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="rightnav">
+          <a class="navbar-brand " href="#"><img src="{% static 'images/LOGO_Name-01.png'%}" alt="Shiksha Saarthi" width="250" ></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="leftnav me-3">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-5">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown me-5">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                <ul class="dropdown-menu" >
+                  <li><a class="dropdown-item" href="Education.html">Education</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="policies.html">Policies</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Mentor</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Jobs</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">News</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+          </div>
+        </div>
+    </nav>
+
+
+    <!-- Card -->
+    <div class="card_container">
+        <div class="card card1">
+            <div class="image"></div>
+            <div class="content">
+            <a href="#">
+                <span class="title">
+                Class 10
+                </span>
+            </a>
+        
+            <p class="desc">                
+              Class 10th is typically the second-to-last year of secondary education in many educational systems worldwide. Students in this class, undergo important examinations and coursework, laying the foundation for their future academic and career paths.
+            </p>
+        
+            <a class="action" href="Education_Subject.html">
+                Find out more
+                <span aria-hidden="true">
+                →
+                </span>
+            </a>
+            </div>
+        </div>
+
+        <div class="card card2">
+            <div class="image"></div>
+            <div class="content">
+            <a href="#">
+                <span class="title">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+            </a>
+        
+            <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                dolores, possimus pariatur animi temporibus nesciunt praesentium 
+            </p>
+        
+            <a class="action" href="#">
+                Find out more
+                <span aria-hidden="true">
+                →
+                </span>
+            </a>
+            </div>
+        </div>
+
+        <div class="card card3">
+            <div class="image"></div>
+            <div class="content">
+            <a href="#">
+                <span class="title">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+            </a>
+        
+            <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                dolores, possimus pariatur animi temporibus nesciunt praesentium 
+            </p>
+        
+            <a class="action" href="#">
+                Find out more
+                <span aria-hidden="true">
+                →
+                </span>
+            </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card_container">
+        <div class="card card1">
+            <div class="image"></div>
+            <div class="content">
+            <a href="#">
+                <span class="title">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+            </a>
+        
+            <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                dolores, possimus pariatur animi temporibus nesciunt praesentium 
+            </p>
+        
+            <a class="action" href="#">
+                Find out more
+                <span aria-hidden="true">
+                →
+                </span>
+            </a>
+            </div>
+        </div>
+
+        <div class="card card2">
+            <div class="image"></div>
+            <div class="content">
+            <a href="#">
+                <span class="title">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+            </a>
+        
+            <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                dolores, possimus pariatur animi temporibus nesciunt praesentium 
+            </p>
+        
+            <a class="action" href="#">
+                Find out more
+                <span aria-hidden="true">
+                →
+                </span>
+            </a>
+            </div>
+        </div>
+
+        <div class="card card3">
+            <div class="image"></div>
+            <div class="content">
+            <a href="#">
+                <span class="title">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+            </a>
+        
+            <p class="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                dolores, possimus pariatur animi temporibus nesciunt praesentium 
+            </p>
+        
+            <a class="action" href="#">
+                Find out more
+                <span aria-hidden="true">
+                →
+                </span>
+            </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Our Team</h6>
+              <ul class="footer-links">
+                <li><a href="">Arnav Gupta</a></li>
+                <li><a href="">Jatin</a></li>
+                <li><a href=""">Sarthak Kala</a></li>
+                <li><a href="">Navansh Goswami</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+           <a href="#">Scanfcode</a>.
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+  </footer>
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

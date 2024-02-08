@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-2xtx)3qge^qbriami15zghcv_7)f4&!oa3rig9mpiuws7t&40w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -178,3 +178,4 @@ TWILIO_ACCOUNT_SID = os.getenv('account_sid')
 TWILIO_AUTH_TOKEN = os.getenv('auth_token')
 TWILIO_VERIFY_SERVICE_SID = os.getenv('verify_sid') 
 TWILIO_PHONE_NUMBER=os.getenv('Twilio_phone_number')
+

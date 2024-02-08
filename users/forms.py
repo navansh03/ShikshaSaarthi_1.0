@@ -38,7 +38,7 @@ class UserRegistrationForm(UserCreationForm):
         otp = random.randint(999,6969)# Generate a random OTP here
 
         message = client.messages.create(
-            body=f'Your OTP is: {otp}',
+            body=f'Your OTP from Shiksha Saarthi is : {otp}',
             from_= settings.TWILIO_PHONE_NUMBER,
             to=self.cleaned_data['phone']
         )
