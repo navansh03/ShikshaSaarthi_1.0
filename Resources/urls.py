@@ -7,6 +7,8 @@ from . import views as resources_views
 urlpatterns = [
     path('educational_content/',resources_views.educational_content,name='educational_content'),
     path('course/<str:slug>/',resources_views.CourseOverview,name='coursepage'),
+    path('subject/<str:slug>',resources_views.SubjectOverview,name='subjectpage'),
+
     path('job-listings/',resources_views.job_listings,name='job_listings'),
 
     path('mentor/',resources_views.mentor,name='mentor'),

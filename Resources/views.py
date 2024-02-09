@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Course,Subject,Video,UserCourse,Contact
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
@@ -13,39 +14,56 @@ def educational_content(request,slug):
 
 
 def CourseOverview(request,slug):
-    # print(slug)
+    print(slug)
     course=Course.objects.get(slug=slug)
     subject=Subject.objects.filter(course=course)
-    video=Video.objects.filter(course=course)
-    course_id=Course.objects.get(slug=slug)
-    try:
-        check_enroll=UserCourse.objects.filter(user=request.user,course=course_id)
-        print(check_enroll)
-    except UserCourse.DoesNotExist:
-        check_enroll=None
-        print(check_enroll)
-    # video=Video.objects.filter(subject=subject).first()
-    # print(video)
-    if check_enroll and len(check_enroll) > 0:
-        # User is enrolled in the course.
-        button_text = "Already Enrolled"
-    else:
-        # User is not enrolled in the course.
-        button_text = "Enroll"
-
-
     
 
     context={
         "course":course,
-        "video":video,
         "subjects":subject,
-        'check_enroll':check_enroll,
-        "button_text":button_text,
         # "video":video,
     }
 
-    return render(request,template_name="Resources/course_overview.html",context=context)
+    return render(request,template_name="Resources/course_overview2.html",context=context)
+
+
+
+# def SubjectOverview(request,slug):
+#     print(slug)
+#     subject=Subject.objects.filter(slug2=slug)
+#     video=Video.objects.filter(subject=subject)
+    
+
+#     context={
+#         "subjects":subject,
+#         "object":video,
+#     }
+
+#     return render(request,template_name="Resources/subject_overview.html",context=context)
+
+def SubjectOverview(request, slug):
+    subject = get_object_or_404(Subject, slug2=slug)
+    videos = Video.objects.filter(subject=subject)
+
+    context = {
+        "subject": subject,
+        "videos": videos,
+    }
+
+    return render(request, template_name="Resources/subject_overview.html", context=context)
+# def Overview(request,slug):
+#     print(slug)
+#     subject=Subject.objects.filter(slug2=slug)
+    
+
+#     context={
+#         "subjects":subject,
+#         # "video":video,
+#     }
+
+#     return render(request,template_name="Resources/subject_overview.html",context=context)
+
 
 
 

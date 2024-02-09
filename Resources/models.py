@@ -21,6 +21,9 @@ class CourseProperty(models.Model):
 class Subject(models.Model):
     course=models.ForeignKey(Course,on_delete=models.CASCADE)
     name=models.CharField(max_length=100,null=False)
+    slug2=models.CharField(max_length=100,null=True)
+    description=models.CharField(max_length=500,default="",null=False)
+    thumbnail=models.ImageField(upload_to='user/images',null=True)
 
     def __str__(self):
         return f"{self.name}"
@@ -33,7 +36,7 @@ class Video(models.Model):
     title= models.CharField(max_length=100,null=False)
     course=models.ForeignKey(Course,null=False,on_delete=models.CASCADE)
     subject=models.ForeignKey(Subject,null=True,on_delete=models.CASCADE,default=0)
-    slug2=models.CharField(max_length=100,null=True)
+    slug3=models.CharField(max_length=100,null=True)
     serial_number=models.IntegerField(null=False,unique=True,default=999)
     video_number=models.IntegerField(null=False,default=0)
     video_url=models.CharField(max_length=150,null=False,default=0)

@@ -1,0 +1,288 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Content</title>
+    <style>
+
+        body{
+        /* background-image: url("https://images.squarespace-cdn.com/content/v1/5421b6e2e4b0a6db313b8b24/1613932175243-LWAQF519CTRPKQN4XJVC/image-from-rawpixel-id-2620215-jpeg.jpg"); */
+        background-image: url({% static 'images/policy_bg.jpg'  %});
+        /* background-color:purple; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        }
+
+        .navbar-nav{
+        font-size: larger;
+        font-weight: 400;
+      }
+
+      .container-fluid {
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+        position: relative;
+        z-index: 1;
+        background: inherit;
+        /* overflow: hidden; */
+      } 
+
+      .container-fluid:before {
+        content: "";
+        position: absolute;
+        background: inherit;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        /* box-shadow: inset 0 0 2000px rgba(150, 150, 150, 0.5); */
+        filter: blur(10px);
+        /* margin: -20px; */
+      }
+        .container_cards{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .card {
+        width: 90%;
+        height: 880px;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        border-radius: 8px;
+        color: white;
+        overflow: hidden;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+        cursor: pointer;
+        margin-top: 50px;
+        margin-bottom : 50px;
+        }
+
+        .card-content {
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        }
+
+        .linktodown{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .card-content .card-title {
+        font-size: 50px;
+        font-weight: 700;
+        color: inherit;
+        text-transform: uppercase;
+        }
+
+        .card-content .card-para {
+        color: inherit;
+        opacity: 0.8;
+        font-size: 14px;
+        }
+
+        .card:hover {
+        transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+        z-index: 1;
+        }
+
+        .card:hover:before {
+        transform: translateX(-100%);
+        }
+
+        .card:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+        z-index: 1;
+        }
+
+        .card:hover:after {
+        transform: translateX(100%);
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="rightnav">
+          <a class="navbar-brand " href="#"><img src="{% static 'images/LOGO_Name-01.png' %}" alt="Shiksha Saarthi" width="250" ></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="leftnav me-3">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-5">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown me-5">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Resources
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Education.html">Education</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="policies.html">Policies</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Mentor</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Jobs</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">News</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+
+    <div class="container_cards">
+        <!--Card1-->
+         <div class="card">
+            <div class="card-content">
+                <p class="card-title">Cirriculum</p>
+                <p class="card-para">
+                    <table class="table table-striped table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">UNITS</th>
+                            <th scope="col">UNIT NAME</th>
+                            <th scope="col">SECTION</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Number Systems</td>
+                            <td>Real Number</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Algebra</td>
+                            <td><ul type="none">
+                                <li>Polynomials</li>
+                                <li>Quadratic Equations</li>
+                                <li>Pair of Linear Equations in Two Variables</li>
+                                <li>Arithmetic Progressions</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Coordinate Geometry</td>
+                            <td>Coordinate Geometry</td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Geometry</td>
+                            <td><ul type="none"><li>Polynomials</li>
+                                <li>Quadratic Equations</li>
+                            </ul></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Trigonometry</td>
+                            <td><ul type="none">
+                                <li>Introduction to Trigonometry</li>
+                                <li>Trigonometric Identities</li>
+                                <li>Heights and Distances</li></td>
+                            </ul></tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Mensuration</td>
+                            <td><ul type="none">
+                                <li>Areas Related to Circles</li>
+                                <li>Surface Areas and Volumes</li>
+                            </ul></td>
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Statistics and Probability</td>
+                            <td><ul type="none">
+                                <li>Statistics</li>
+                                <li>Probability</li>
+                            </ul></td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    <a class="linktodown" href="https://adda247jobs-wp-assets-prod.adda247.com/jobs/wp-content/uploads/sites/2/2023/07/14232731/Maths_Sec_2023-24.pdf">TO DOWNLOAD THE PDF OF THE CURRICULUM</a>
+                </p>
+            </div>
+         </div>  
+
+        <!-- Card2 -->
+        <div class="card">
+            <div class="card-content">
+            <p class="card-title">Video Lectures</p>
+            {% for i in object %}
+            <ul type="none">
+                <li>
+                    <a href="https://youtu.be/fl-Q_bT-oO0?feature=shared">{{ i.name }}</a>
+                </li>
+
+
+            </ul>
+            {% comment %} <p class="card-para">VIDEOS CHALENGE BETA SEEDHA YT SE BINA YT KE <3 </p> {% endcomment %}
+            </div>
+         </div> 
+    </div>
+</div>
+</body>
+</html>
