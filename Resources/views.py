@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 @login_required
-def educational_content(request,slug):
+def educational_content(request):
     courses=Course.objects.filter(active='True') 
        
     return render(request,template_name="Resources/educational.html",context={"courses":courses})
@@ -45,13 +45,26 @@ def CourseOverview(request,slug):
 def SubjectOverview(request, slug):
     subject = get_object_or_404(Subject, slug2=slug)
     videos = Video.objects.filter(subject=subject)
-
+    print(videos)
     context = {
         "subject": subject,
-        "videos": videos,
+        "object": videos,
     }
 
     return render(request, template_name="Resources/subject_overview.html", context=context)
+
+
+
+
+def LectureOverview(request, slug):
+    videos = Video.objects.filter(slug3=slug)
+    print(videos)
+    context={
+        "object":videos
+    }
+
+    
+    return render(request,template_name="Resources/video_details.html", context=context)
 # def Overview(request,slug):
 #     print(slug)
 #     subject=Subject.objects.filter(slug2=slug)

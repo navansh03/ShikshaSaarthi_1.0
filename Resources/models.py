@@ -38,8 +38,7 @@ class Video(models.Model):
     subject=models.ForeignKey(Subject,null=True,on_delete=models.CASCADE,default=0)
     slug3=models.CharField(max_length=100,null=True)
     serial_number=models.IntegerField(null=False,unique=True,default=999)
-    video_number=models.IntegerField(null=False,default=0)
-    video_url=models.CharField(max_length=150,null=False,default=0)
+    video_id=models.CharField(max_length=150,null=False,default=0)
     is_preview=models.BooleanField(default=False)
 
 
